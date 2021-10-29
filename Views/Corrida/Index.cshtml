@@ -1,0 +1,36 @@
+﻿@model IList<Corrida>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Corridas</h1>
+
+<mensagem texto="@TempData["msg"]"></mensagem>
+
+<a asp-action="cadastrar">Cadastrar</a>
+
+<table class="table">
+    <tr>
+        <th>Cliente</th>
+        <th>Data Corrida</th>
+        <th>Valor</th>
+        <th>Desconto</th>
+        <th>Forma de Pagamento</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Cliente.Nome</td>
+            <td>@item.DataCorrida</td>
+            <td>@item.Valor.ToString("n")</td>
+            <td>@item.Desconto?.ToString("n")</td>
+            <td>@item.FormaPagamento</td>
+            <td>
+                <a asp-action="Adicionar" asp-route-id="@item.CorridaId">Adicionar Itens</a>
+            </td>
+        </tr>
+    }
+</table>
+
