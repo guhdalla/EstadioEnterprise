@@ -23,7 +23,7 @@ namespace Fiap.Aula03.Web.Persistencias
             //Configurar o relacionamento da tabela associativa com o pedido
             modelBuilder.Entity<Desconto>()
                 .HasOne(i => i.Corrida)
-                .WithMany(i => i.Decontos)
+                .WithMany(i => i.Descontos)
                 .HasForeignKey(i => i.CorridaId);
 
             //Configurar o relacionamento da tabela associativa com o produto

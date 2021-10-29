@@ -35,7 +35,7 @@ namespace Fiap.Aula03.Web
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IDroneRepository, DroneRepository>();
             services.AddScoped<ICorridaRepository, CorridaRepository>();
-            services.AddScoped<IDescontoRepository, IDescontoRepository>();
+            services.AddScoped<IDescontoRepository, DescontoRepository>();
 
         }
 

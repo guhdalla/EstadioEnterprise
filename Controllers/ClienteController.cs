@@ -14,7 +14,6 @@ namespace Fiap.Aula03.Web.Controllers
     {
         private IClienteRepository _clienteRepository;
 
-        //Receber o context por injeção de dependência no construtor
         public ClienteController(IClienteRepository clienteRepository)
         {
             _clienteRepository = clienteRepository;
@@ -48,13 +47,13 @@ namespace Fiap.Aula03.Web.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Cliente cliente)
         {
-            //Cadastrar no banco
+ 
             _clienteRepository.Cadastrar(cliente);
-            //Commit
+           
             _clienteRepository.Salvar();
-            //Mensagem
+           
             TempData["msg"] = "Cliente cadastrado!";
-            //Redirect
+           
             return RedirectToAction("Index");
         }
 
@@ -64,11 +63,10 @@ namespace Fiap.Aula03.Web.Controllers
             return View();
         }
 
-        // ? -> permite atribuir null
+       
         public IActionResult Index(string nomeBusca, Genero? generoBusca)
         {
-            //Contains() pesquisa por parte da string
-            //Include() -> inclui o relacionamento no resultado da pesquisa
+         
             var lista = _clienteRepository.BuscarPor(c =>
                (c.Nome.Contains(nomeBusca) || nomeBusca == null)  
                && (generoBusca == c.Genero || generoBusca == null));

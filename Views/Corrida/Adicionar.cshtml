@@ -30,7 +30,7 @@
 
 <form asp-action="adicionar" class="form-inline mb-3">
     <input type="hidden" name="pedidoId" value="@Model.CorridaId" />
-    <select class="form-control mr-2" name="produtoId" asp-items="@ViewBag.produtosSelect">
+    <select class="form-control mr-2" name="produtoId" asp-items="@ViewBag.dronesSelect">
         <option>Selecione</option>
     </select>
     <input type="submit" value="Adicionar" class="btn btn-success" />
@@ -42,7 +42,7 @@
         <th>Valor</th>
         <th>Descrição</th>
     </tr>
-    @foreach (var item in ViewBag.produtos)
+    @foreach (var item in ViewBag.drones)
     {
         <tr>
             <td>@item.Nome</td>

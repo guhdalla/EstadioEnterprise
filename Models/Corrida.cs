@@ -22,7 +22,7 @@ namespace Fiap.Aula03.Web.Models
         public int ClienteId { get; set; }
 
         //Relacionamento muitos-para-muitos
-        public IList<Desconto> Decontos { get; set; }
+        public IList<Desconto> Descontos { get; set; }
 
         public decimal Valor { get; set; }
         

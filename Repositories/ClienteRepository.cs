@@ -11,9 +11,9 @@ namespace Fiap.Aula03.Web.Repositories
 {
     public class ClienteRepository : IClienteRepository
     {
-        private MercadoContext _context;
+        private EstadioContext _context;
 
-        public ClienteRepository(MercadoContext context)
+        public ClienteRepository(EstadioContext context)
         {
             _context = context;
         }
